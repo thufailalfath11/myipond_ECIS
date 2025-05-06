@@ -5,43 +5,44 @@ import { db1 } from "./../firebase";
 import SensorGauges2 from "./Prediksi2";
 import Informasi from "./Informasi";
 
-// Komponen untuk menampilkan data sensor
-function SensorGauges() {
-  const [pHValue, setPHValue] = useState(0);
-  const [temperature, setTemperature] = useState(0);
-  const [turbidity, setTurbidity] = useState(0);
-  const [prediction, setPredictionCategory] = useState("Loading...");
-  const [value, setPredictionValue] = useState(0);
+ 
+  function SensorGauges() {
+    const [pHValue, setPHValue] = useState(0);
+    const [temperature, setTemperature] = useState(0);
+    const [turbidity, setTurbidity] = useState(0);
+    const [prediction, setPredictionCategory] = useState("Loading...");
+    const [value, setPredictionValue] = useState(0);
+  
+    useEffect(() => {
+      const fetchData = async () => {
+        try {
+          const response = await fetch("http://127.0.0.1:5005/decrypt-data");
+          const data = await response.json();
+          
+          console.log("📡 Data received:", data); // Debugging
+    
+          if (data.decrypted_data) {
+            setPHValue(data.decrypted_data.sensor.PH_AIR);
+            setTemperature(data.decrypted_data.sensor.SUHU_AIR);
+            setTurbidity(data.decrypted_data.sensor.KEKERUHAN_AIR);
 
-  useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const response = await fetch("http://192.168.1.8:5001/decrypt-data");
-        const data = await response.json();
-  
-        if (data.decrypted) {
-          // Set data sensor
-          setPHValue(data.decrypted.sensor.PH_AIR);
-          setTemperature(data.decrypted.sensor.SUHU_AIR);
-          setTurbidity(data.decrypted.sensor.KEKERUHAN_AIR);
-  
-          // Set data prediksi
-          setPredictionCategory(data.decrypted.prediksi.Kategori);
-          setPredictionValue(data.decrypted.prediksi.Prediksi);
-        } else {
-          console.error("❌ Gagal mendapatkan data dekripsi");
+            // Set data prediksi
+            setPredictionCategory(data.decrypted_data.prediksi.Kategori);
+            setPredictionValue(data.decrypted_data.prediksi.Prediksi);
+          } else {
+            console.error("❌ Data format unexpected:", data);
+          }
+        } catch (error) {
+          console.error("⚠️ Error fetching decrypted data:", error);
         }
-      } catch (error) {
-        console.error("⚠️ Error fetching decrypted data:", error);
-      }
-    };
-  
-    fetchData();
-    const interval = setInterval(fetchData, 5000); // Ambil data setiap 5 detik
-  
-    return () => clearInterval(interval);
-  }, []);
-  
+      };
+    
+      fetchData();
+      const interval = setInterval(fetchData, 5000);
+    
+      return () => clearInterval(interval);
+    }, []);
+    
   return (
     <div style={{ paddingTop: "120px", textAlign: "center" }}>
       <h4 className="mb-4">Kondisi Kolam {value}</h4>

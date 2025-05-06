@@ -12,26 +12,30 @@ function SensorGauges() {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await fetch("http://192.168.1.8:5001/decrypt-data");
+        const response = await fetch("http://127.0.0.1:5005/decrypt-data");
         const data = await response.json();
-
-        if (data.decrypted) {
-          setPHValue(data.decrypted.PH_AIR);
-          setTemperature(data.decrypted.SUHU_AIR);
-          setTurbidity(data.decrypted.KEKERUHAN_AIR);
+        
+        console.log("📡 Data received:", data); // Debugging
+  
+        if (data.decrypted_data) {
+          setPHValue(data.decrypted_data.sensor.PH_AIR);
+          setTemperature(data.decrypted_data.sensor.SUHU_AIR);
+          setTurbidity(data.decrypted_data.sensor.KEKERUHAN_AIR);
         } else {
-          console.error("❌ Gagal mendapatkan data dekripsi");
+          console.error("❌ Data format unexpected:", data);
         }
       } catch (error) {
         console.error("⚠️ Error fetching decrypted data:", error);
       }
     };
-
+  
     fetchData();
-    const interval = setInterval(fetchData, 5000); // Ambil data setiap 5 detik
-
+    const interval = setInterval(fetchData, 5000);
+  
     return () => clearInterval(interval);
   }, []);
+  
+  
 
   return (
     <div>
