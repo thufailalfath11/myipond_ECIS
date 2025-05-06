@@ -12,7 +12,7 @@ from flask_cors import CORS  # 🔹 Tambahkan ini
 # 🔹 Setup Firebase
 cred = credentials.Certificate("firebase-key.json")  # Sesuaikan dengan path
 firebase_admin.initialize_app(cred, {
-    "databaseURL": "https://dummyecis-default-rtdb.firebaseio.com/"
+    "databaseURL": "https://ecisdata-ae40e-default-rtdb.firebaeio.com/"
 })
 
 # 🔹 Kunci AES-256 dan IV (HARUS sama dengan yang digunakan untuk enkripsi)
