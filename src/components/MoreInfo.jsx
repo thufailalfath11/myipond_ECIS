@@ -11,7 +11,7 @@ const MoreInfoSidebar = ({ show, onHide }) => {  // Menambahkan props show dan o
         <ListGroup variant="flush">
           <ListGroup.Item className="fw-bold">Contact</ListGroup.Item>
           <ListGroup.Item>Email: grubtatelu@gmail.com</ListGroup.Item>
-          <ListGroup.Item>Phone: +6281325749080 </ListGroup.Item>
+          <ListGroup.Item>Phone: +62 </ListGroup.Item>
 
           <ListGroup.Item className="fw-bold mt-3">Halo!</ListGroup.Item>
           <ListGroup.Item>My I-Pond adalah solusi IoT untuk monitoring kualitas air kolam ikan secara real-time.</ListGroup.Item>
