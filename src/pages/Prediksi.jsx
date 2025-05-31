@@ -85,7 +85,7 @@ import Informasi from "./Informasi";
         {/* Komponen Prediksi */}
         <Row>
         
-            <SensorGauges2 />
+            {/* <SensorGauges2 /> */}
     
         </Row>
 

@@ -7,9 +7,9 @@ import GaugeComponent from "./Monitoring1/SensorGauge"
 const MonitoringPage = () => {
   return (
     <div> 
-      <GaugeComponent/>
+      {/* <GaugeComponent/>
 
-      <CombinedHistoryChart/>
+      <CombinedHistoryChart/> */}
    
       
     </div>

@@ -53,8 +53,8 @@ function AboutUs() {
         </section>
 
         {/* Tim Kami Section */}
-        {/* <section className="team-section text-center mb-5">
-          <h3 className="text-primary fw-bold mb-4">Tim Kami</h3>
+        <section className="team-section text-center mb-5">
+          {/* <h3 className="text-primary fw-bold mb-4">Tim Kami</h3>
           <Row className="justify-content-center">
             <Col md={4} sm={6} className="mb-4">
               <Card className="p-4 shadow-sm border-0">
@@ -74,6 +74,7 @@ function AboutUs() {
                 <h5>Rr Meidita Thifal</h5>
               </Card>
             </Col>
+          </Row> */}
           </Row> */}
           <ExplorePage/>
         </section>

@@ -23,7 +23,7 @@ const ServicesPage = () => {
               style={{ width: "150px", margin: "0 auto" }}
             >
               <option value="Kolam 1">Kolam 1</option>
-              <option value="Kolam 2">Kolam 2</option>
+              {/* <option value="Kolam 2">Kolam 2</option> */}
             </Form.Select>
             <Button variant="warning" className="rounded-pill">
               {selectedPool}
