@@ -1,0 +1,14 @@
+[
+    {
+      "id": "git-auto-pull",
+      "execute-command": "/home/ECIS/myipond_ECIS/git-auto-pull.sh",
+      "command-working-directory": "/home/ECIS/myipond_ECIS/",
+      "pass-arguments-to-command": [
+        {
+          "source": "payload",
+          "name": "ref"
+        }
+      ]
+    }
+  ]
+  
