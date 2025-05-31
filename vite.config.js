@@ -5,7 +5,7 @@ import react from '@vitejs/plugin-react'
 export default defineConfig({
   plugins: [react()],
   server: {
-    allowedHosts: 'all',
+    allowedHosts: ['webecis.mbclaboratory.com'],
     host: true // biar bisa diakses dari luar, penting juga!
   },
 })
