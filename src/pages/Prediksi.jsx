@@ -45,7 +45,7 @@ import Informasi from "./Informasi";
     
   return (
     <div style={{ paddingTop: "120px", textAlign: "center" }}>
-      <h4 className="mb-4">Kondisi Kolam {value}</h4>
+      <h4 className="mb-4">Kondisi Kolam 1</h4>
       <p style={{ fontSize: "1.2rem", color: "#555" }}>
         Halo petambak, kondisi kolam kamu{" "}
         <span style={{ fontWeight: "bold", color: "#007bff" }}>{prediction}</span>.
