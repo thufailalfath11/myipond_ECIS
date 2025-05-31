@@ -16,7 +16,7 @@ import Informasi from "./Informasi";
     useEffect(() => {
       const fetchData = async () => {
         try {
-          const response = await fetch("https://dekripsi.mbclaboratory.com/");
+          const response = await fetch("https://ecis.mbclaboratory.com/decrypt-data");
           const data = await response.json();
           
           console.log("📡 Data received:", data); // Debugging
