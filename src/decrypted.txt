@@ -1,0 +1,1 @@
+{"sensor": {"SUHU_AIR": 23.94, "PH_AIR": 9.49, "KEKERUHAN_AIR": 2915.71}, "prediksi": {"Prediksi": 3, "Kategori": "Kurang Optimal"}}

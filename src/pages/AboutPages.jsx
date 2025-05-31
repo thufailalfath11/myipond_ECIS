@@ -75,7 +75,6 @@ function AboutUs() {
               </Card>
             </Col>
           </Row> */}
-          </Row> */}
           <ExplorePage/>
         </section>
       </Container>
